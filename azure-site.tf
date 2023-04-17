@@ -64,6 +64,22 @@ resource "volterra_azure_vnet_site" "azure-site" {
    #no_k8s_cluster           = true
     no_global_network        = true
     #default_storage         = ""
+    storage_class_list {
+      storage_classes = [
+        {
+          default_storage_class = true
+          storage_class_name = "etcd-storage"
+        },
+        {
+          default_storage_class = false
+          storage_class_name = "hostpath"
+        },
+        {
+          default_storage_class = false
+          storage_class_name = "standard"
+        }        
+      ]
+    }
     k8s_cluster {
       namespace = var.k8s_cluster_namespace // Value obtained from mk8s cluster creation module
       name      = var.k8s_cluster_name      // Value obtained from mk8s cluster creation module
