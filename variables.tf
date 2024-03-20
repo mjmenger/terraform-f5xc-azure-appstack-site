@@ -25,3 +25,7 @@ variable k8s_cluster_name {
 variable k8s_cluster_namespace {
     type = string
 }
+variable k8s_node_instance_type {
+    type = string
+    default = "Standard_D8_v3"
+}
