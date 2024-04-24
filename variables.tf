@@ -29,7 +29,7 @@ variable k8s_node_instance_type {
     type    = string
     default = "Standard_D8_v3"
 }
-variable disk_size {
+variable k8s_node_disk_size {
     type    = number
     default = 80
 }
