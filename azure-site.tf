@@ -27,7 +27,7 @@ resource "volterra_azure_vnet_site" "azure-site" {
 
     az_nodes {
       azure_az  = "1"
-      disk_size = 80 // Modify disk size as needed
+      disk_size = var.disk_size // Modify disk size as needed
       local_subnet {
         subnet {
           subnet_name         = "internal_subnet"
@@ -38,7 +38,7 @@ resource "volterra_azure_vnet_site" "azure-site" {
 
     az_nodes {
       azure_az  = "2"
-      disk_size = 80 // Modify disk size as needed
+      disk_size = var.disk_size // Modify disk size as needed
       local_subnet {
         subnet {
           subnet_name         = "internal_subnet"
@@ -49,7 +49,7 @@ resource "volterra_azure_vnet_site" "azure-site" {
 
     az_nodes {
       azure_az  = "3"
-      disk_size = 80 // Modify disk size as needed
+      disk_size = var.disk_size // Modify disk size as needed
       local_subnet {
         subnet {
           subnet_name         = "internal_subnet"
