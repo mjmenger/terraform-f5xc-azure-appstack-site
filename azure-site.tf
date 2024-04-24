@@ -4,7 +4,7 @@ resource "volterra_azure_vnet_site" "azure-site" {
   name           = format("%s-azureappstack-%s", var.project_prefix, var.instance_suffix)
   namespace      = "system"
   azure_region   = var.azure_region
-  resource_group = "${var.resource_group}-appstack-site"
+  resource_group = format("%s-appstack-site-%s", var.resource_group, var.instance_suffix)
   // Minimum resource requirements can be found https://docs.cloud.f5.com/docs/how-to/site-management/create-azure-site
   machine_type   = var.k8s_node_instance_type # Modify machine type to match resource requirements (minimum 4x VCPU, 14GB RAM)
   ssh_key        = var.ssh_public_key
