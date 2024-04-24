@@ -26,6 +26,10 @@ variable k8s_cluster_namespace {
     type = string
 }
 variable k8s_node_instance_type {
-    type = string
+    type    = string
     default = "Standard_D8_v3"
+}
+variable disk_size {
+    type    = number
+    default = 80
 }
