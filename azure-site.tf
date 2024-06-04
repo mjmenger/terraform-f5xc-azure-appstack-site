@@ -26,7 +26,7 @@ resource "volterra_azure_vnet_site" "azure-site" {
     azure_certified_hw = "azure-byol-voltstack-combo"
 
     az_nodes {
-      azure_az  = "1"
+      azure_az  = var.k8s_node_az_override == "" ? "1" : var.k8s_node_az_override
       disk_size = var.k8s_node_disk_size // Modify disk size as needed
       local_subnet {
         subnet {
@@ -37,7 +37,7 @@ resource "volterra_azure_vnet_site" "azure-site" {
     }
 
     az_nodes {
-      azure_az  = "2"
+      azure_az  = var.k8s_node_az_override == "" ? "2" : var.k8s_node_az_override
       disk_size = var.k8s_node_disk_size // Modify disk size as needed
       local_subnet {
         subnet {
@@ -48,7 +48,7 @@ resource "volterra_azure_vnet_site" "azure-site" {
     }
 
     az_nodes {
-      azure_az  = "3"
+      azure_az  = var.k8s_node_az_override == "" ? "3" : var.k8s_node_az_override
       disk_size = var.k8s_node_disk_size // Modify disk size as needed
       local_subnet {
         subnet {
