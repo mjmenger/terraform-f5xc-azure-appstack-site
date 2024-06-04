@@ -33,3 +33,8 @@ variable k8s_node_disk_size {
     type    = number
     default = 80
 }
+
+variable k8s_node_az_override {
+    type    = string
+    default = ""
+}
